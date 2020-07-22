@@ -6,6 +6,7 @@ class Loan{
 	 int data;
 	
 }
+//
 class AutoLoan extends Loan{
 	int j;
 	public void m1(){
