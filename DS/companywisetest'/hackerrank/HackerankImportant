@@ -1,0 +1,46 @@
+********************************************************************************************
+convert List<List<String>> to String[][]
+String[][] array = new String[arrayList.size()][];
+for (int i = 0; i < arrayList.size(); i++) {
+    ArrayList<String> row = arrayList.get(i);
+    array[i] = row.toArray(new String[row.size()]);
+}
+
+********************************************************************************************
+Convert  List<List<Integer>> list to int[][] 
+
+int[][] array = new int[list.size()][];
+		for (int i = 0; i < array.length; i++) {
+			array[i] = new int[list.get(i).size()];
+		}
+		for(int i=0; i<list.size(); i++){
+			for (int j = 0; j < list.get(i).size(); j++) {
+				array[i][j] = list.get(i).get(j);
+			}
+		}
+		
+********************************************************************************************
+
+Convert rrayList<ArrayList<String>>  to String[][].
+
+ArrayList<ArrayList<String>> mainList = new ArrayList<ArrayList<String>>();
+// populate this list here
+(Or, rather, in Java 8:
+
+ArrayList<ArrayList<String>> mainList = new ArrayList();
+//Populate
+)
+
+Then all you need is:
+
+String[][] stringArray = mainList.stream().map(u -> u.toArray(new String[0])).toArray(String[][]::new);		
+
+
+**************************************************************************************************************
+
+Convert List<Integer> to int[]
+
+List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+int[] array = list.stream().mapToInt(i -> i).toArray();
+		
+	
